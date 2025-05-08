@@ -70,7 +70,7 @@ const Contact = () => {
   return (
     <div className="relative bg-gray-900 min-h-screen flex flex-col justify-center items-center py-12 px-6">
       <motion.div
-        className="bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-xl shadow-xl w-full sm:w-[650px]"
+        className="bg-gradient-to-r from-blue-600 to-indigo-600 p-8 rounded-xl shadow-xl w-full sm:w-[650px] md:w-[800px]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -130,12 +130,14 @@ const Contact = () => {
                   value={form.name}
                   onChange={handleChange}
                   className="peer w-full py-3 px-6 rounded-lg outline-none border border-gray-700 bg-gray-800 text-white placeholder-transparent focus:ring-2 focus:ring-blue-500 transition-all"
-                  placeholder={form.name ? '' : 'Your Name'}
+                  placeholder="Your Name"
                   required
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:text-sm peer-focus:text-blue-500"
+                  className={`absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-500 transition-all ${
+                    form.name ? 'text-sm top-0 -translate-y-5 opacity-0' : 'text-base'
+                  }`}
                 >
                   Your Name
                 </label>
@@ -149,12 +151,14 @@ const Contact = () => {
                   value={form.email}
                   onChange={handleChange}
                   className="peer w-full py-3 px-6 rounded-lg outline-none border border-gray-700 bg-gray-800 text-white placeholder-transparent focus:ring-2 focus:ring-blue-500 transition-all"
-                  placeholder={form.email ? '' : 'Your Email'}
+                  placeholder="Your Email"
                   required
                 />
                 <label
                   htmlFor="email"
-                  className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:text-sm peer-focus:text-blue-500"
+                  className={`absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-500 transition-all ${
+                    form.email ? 'text-sm top-0 -translate-y-5 opacity-0' : 'text-base'
+                  }`}
                 >
                   Your Email
                 </label>
@@ -168,12 +172,14 @@ const Contact = () => {
                   value={form.message}
                   onChange={handleChange}
                   className="peer w-full py-3 px-6 rounded-lg outline-none border border-gray-700 bg-gray-800 text-white placeholder-transparent focus:ring-2 focus:ring-blue-500 transition-all"
-                  placeholder={form.message ? '' : 'Your Message'}
+                  placeholder="Your Message"
                   required
                 />
                 <label
                   htmlFor="message"
-                  className="absolute left-6 top-6 text-gray-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:text-sm peer-focus:text-blue-500"
+                  className={`absolute left-6 top-6 text-gray-500 transition-all ${
+                    form.message ? 'text-sm top-0 -translate-y-5 opacity-0' : 'text-base'
+                  }`}
                 >
                   Your Message
                 </label>

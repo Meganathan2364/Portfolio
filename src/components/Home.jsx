@@ -18,16 +18,16 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white px-4 py-10"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white px-4 py-10 sm:px-6 md:px-8 lg:px-16"
     >
-      <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-16 z-10">
+      <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-16 z-10 relative">
         
         {/* Left Section */}
         <div className="flex-1 text-center md:text-left space-y-6 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
             Hello, I'm Meganathan V
           </h1>
-          <h2 className="text-2xl font-semibold text-gray-800">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800">
             AI & Data Science Student
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto md:mx-0 text-lg leading-relaxed">
@@ -37,7 +37,7 @@ const Home = () => {
           </p>
 
           {/* Contact Info */}
-          <div className="text-gray-700 text-sm md:text-base space-y-1 pt-2">
+          <div className="text-gray-700 text-sm sm:text-base space-y-1 pt-2">
             <p className="flex items-center gap-2"><FaEnvelope className="text-blue-600" /> vmega0777@gmail.com</p>
             <p className="flex items-center gap-2"><FaPhone className="text-blue-600" /> +91 8072593510</p>
             <p className="flex items-center gap-2">
@@ -77,7 +77,7 @@ const Home = () => {
           <img
             src={profileImage}
             alt="Meganathan V"
-            className="w-64 h-64 object-cover rounded-full border-4 border-white shadow-lg transition-transform duration-500"
+            className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 object-cover rounded-full border-4 border-white shadow-lg transition-transform duration-500"
           />
         </div>
       </div>

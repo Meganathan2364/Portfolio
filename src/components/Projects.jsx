@@ -7,7 +7,7 @@ import Footer from './Footer';
 // Modal for project details
 const ProjectModal = ({ project, closeModal }) => (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-    <div className="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
+    <div className="bg-white p-6 rounded-lg shadow-lg max-w-full sm:max-w-3xl w-full">
       <h2 className="text-2xl font-bold mb-4">{project.title}</h2>
       <p><strong>Overview:</strong> {project.details.overview}</p>
       <p><strong>Problem Statement:</strong> {project.details.problemStatement}</p>

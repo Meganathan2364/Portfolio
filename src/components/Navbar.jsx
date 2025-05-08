@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import classNames from 'classnames';  // Add classNames for dynamic class handling
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {
@@ -15,13 +17,15 @@ const Navbar = () => {
   };
 
   // Scroll to top on route change
-  const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  // Active page styling
-  const isActive = (path) => pathname === path ? 'text-blue-400 font-semibold' : 'text-white';
+  // Dynamically apply active class
+  const isActive = (path) => classNames({
+    'text-blue-400 font-semibold': pathname === path,
+    'text-white': pathname !== path,
+  });
 
   return (
     <nav className="bg-gray-900 p-4 text-white fixed w-full z-10 top-0 shadow-lg" aria-label="Main navigation">
@@ -34,11 +38,11 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden sm:flex space-x-6 text-sm items-center">
-          <Link to="/" className={`${isActive('/')}`}>Home</Link>
-          <Link to="/about" className={`${isActive('/about')}`}>About</Link>
-          <Link to="/projects" className={`${isActive('/projects')}`}>Projects</Link>
-          <Link to="/experience" className={`${isActive('/experience')}`}>Skills & Experience</Link>
-          <Link to="/contact" className={`${isActive('/contact')}`}>Contact</Link>
+          <Link to="/" className={isActive('/')}>Home</Link>
+          <Link to="/about" className={isActive('/about')}>About</Link>
+          <Link to="/projects" className={isActive('/projects')}>Projects</Link>
+          <Link to="/experience" className={isActive('/experience')}>Skills & Experience</Link>
+          <Link to="/contact" className={isActive('/contact')}>Contact</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -63,12 +67,12 @@ const Navbar = () => {
           ✕
         </button>
         <ul className="font-medium text-2xl space-y-6 mt-20">
-          <li><Link to="/" onClick={closeMobileMenu} className={`${isActive('/')}`}>Home</Link></li>
-          <li><Link to="/about" onClick={closeMobileMenu} className={`${isActive('/about')}`}>About</Link></li>
-          <li><Link to="/projects" onClick={closeMobileMenu} className={`${isActive('/projects')}`}>Projects</Link></li>
-          <li><Link to="/skills" onClick={closeMobileMenu} className={`${isActive('/skills')}`}>Skills</Link></li> {/* Added Skills */}
-          <li><Link to="/experience" onClick={closeMobileMenu} className={`${isActive('/experience')}`}>Experience</Link></li>
-          <li><Link to="/contact" onClick={closeMobileMenu} className={`${isActive('/contact')}`}>Contact</Link></li>
+          <li><Link to="/" onClick={closeMobileMenu} className={isActive('/')}>Home</Link></li>
+          <li><Link to="/about" onClick={closeMobileMenu} className={isActive('/about')}>About</Link></li>
+          <li><Link to="/projects" onClick={closeMobileMenu} className={isActive('/projects')}>Projects</Link></li>
+          <li><Link to="/skills" onClick={closeMobileMenu} className={isActive('/skills')}>Skills</Link></li>
+          <li><Link to="/experience" onClick={closeMobileMenu} className={isActive('/experience')}>Experience</Link></li>
+          <li><Link to="/contact" onClick={closeMobileMenu} className={isActive('/contact')}>Contact</Link></li>
         </ul>
       </div>
     </nav>

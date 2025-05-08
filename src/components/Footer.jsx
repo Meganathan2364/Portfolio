@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <motion.div
-      className="bg-slate-900 p-6 mt-10"
+      className="bg-slate-900 p-6 mt-10 relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
@@ -26,7 +26,7 @@ const Footer = () => {
         </motion.p>
 
         <motion.div
-          className="flex justify-around sm:w-[250px] w-full"
+          className="flex justify-around sm:w-[250px] w-full gap-6 sm:gap-12"
           initial={{ x: -30, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.2 }}

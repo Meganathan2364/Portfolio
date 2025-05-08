@@ -56,17 +56,17 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white px-6 py-10">
-      <motion.div 
+      <motion.div
         className="max-w-4xl mx-auto bg-gray-900 rounded-xl shadow-lg p-8"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-center text-4xl font-extrabold text-blue-500 mb-6 tracking-wide">
+        <h1 className="text-center text-3xl sm:text-4xl font-extrabold text-blue-500 mb-6 tracking-wide">
           {project.title}
         </h1>
 
-        <motion.p 
+        <motion.p
           className="text-gray-300 text-lg leading-relaxed flex items-start gap-2"
           whileHover={{ scale: 1.01 }}
         >
